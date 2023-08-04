@@ -4,7 +4,7 @@ let currentResult = zerro;
 
 // Functions
 function add() {
-  currentResult = currentResult + userInput.value;
+  currentResult = currentResult + parseInt(userInput.value);
   outputResult(currentResult, ' ');
 }
 
