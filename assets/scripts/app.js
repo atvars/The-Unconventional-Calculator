@@ -1,6 +1,7 @@
 /***************** Global Variables ***********************/
 const zerro = 0;
 let currentResult = zerro;
+let logEntries = [];
 /***************** Functions ***********************/
 // get users entered nr value
 function getUsersNumberInput() {
@@ -17,6 +18,7 @@ function add() {
   const initialResult = currentResult;
   currentResult = currentResult + enteredNo;
   output('+', initialResult, enteredNo);
+  logEntries.push(enteredNo);
 }
 // subtraction
 function subtract() {
@@ -44,3 +46,5 @@ addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
 multiplyBtn.addEventListener('click', multiply);
 divideBtn.addEventListener('click', divide);
+
+numbers.push(8, 2);
