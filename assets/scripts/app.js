@@ -1,13 +1,12 @@
 /***************** Global Variables ***********************/
 const zerro = 0;
 let currentResult = zerro;
-
 /***************** Functions ***********************/
-// function to get users entered nr value
+// get users entered nr value
 function getUsersNumberInput() {
   return parseInt(userInput.value);
 }
-// function for output
+// create output
 function output(operator, resultBefore, calcNumber) {
   const calcDescription = `${resultBefore} ${operator} ${calcNumber}`;
   outputResult(currentResult, calcDescription);
@@ -33,10 +32,15 @@ function multiply() {
   currentResult = currentResult * enteredNo;
   output('*', initialResult, enteredNo);
 }
-// devide
-function devide() {}
-
+// divide
+function divide() {
+  const enteredNo = getUsersNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult / enteredNo;
+  output('/', initialResult, enteredNo);
+}
 /***************** Event Listeners ***********************/
 addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
 multiplyBtn.addEventListener('click', multiply);
+divideBtn.addEventListener('click', divide);
