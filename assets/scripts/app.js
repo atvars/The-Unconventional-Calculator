@@ -27,10 +27,16 @@ function subtract() {
   output('-', initialResult, enteredNo);
 }
 // multiply
-function multiply() {}
+function multiply() {
+  const enteredNo = getUsersNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult * enteredNo;
+  output('*', initialResult, enteredNo);
+}
 // devide
 function devide() {}
 
 /***************** Event Listeners ***********************/
 addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
+multiplyBtn.addEventListener('click', multiply);
