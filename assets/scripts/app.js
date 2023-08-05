@@ -4,7 +4,10 @@ let currentResult = zerro;
 
 // Functions
 
-
+// function to get users entered nr value
+function getUsersNumberInput() {
+    return parseInt(userInput.value);
+}
 
 // addition
 function add() {
