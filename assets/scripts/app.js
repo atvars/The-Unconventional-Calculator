@@ -1,32 +1,36 @@
-// variables
+/***************** Global Variables ***********************/
 const zerro = 0;
 let currentResult = zerro;
 
-// Functions
+/***************** Functions ***********************/
 // function to get users entered nr value
 function getUsersNumberInput() {
   return parseInt(userInput.value);
 }
-
+// function for output
+function output(operator, resultBefore, calcNumber) {
+  const calcDescription = `${resultBefore} ${operator} ${calcNumber}`;
+  outputResult(currentResult, calcDescription);
+}
 // addition
 function add() {
   const enteredNo = getUsersNumberInput();
-  const calcDescription = `${currentResult} + ${enteredNo}`;
+  const initialResult = currentResult;
   currentResult = currentResult + enteredNo;
-  outputResult(currentResult, calcDescription);
+  output('+', initialResult, enteredNo);
 }
 // subtraction
 function subtract() {
   const enteredNo = getUsersNumberInput();
-  const calcDescription = `${currentResult} - ${enteredNo}`;
+  const initialResult = currentResult;
   currentResult = currentResult - enteredNo;
-  outputResult(currentResult, calcDescription);
+  output('-', initialResult, enteredNo);
 }
 // multiply
 function multiply() {}
 // devide
 function devide() {}
 
-//event listeners
+/***************** Event Listeners ***********************/
 addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
