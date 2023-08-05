@@ -6,12 +6,12 @@ let currentResult = zerro;
 
 // function to get users entered nr value
 function getUsersNumberInput() {
-    return parseInt(userInput.value);
+  return parseInt(userInput.value);
 }
 
 // addition
 function add() {
-  const enteredNo = parseInt(userInput.value);
+  const enteredNo = getUsersNumberInput();
   const calcDescription = `${currentResult} + ${enteredNo}`;
   currentResult = currentResult + enteredNo;
   outputResult(currentResult, calcDescription);
@@ -21,7 +21,7 @@ addBtn.addEventListener('click', add);
 
 // subtraction
 function subtract() {
-  const enteredNo = parseInt(userInput.value);
+  const enteredNo = getUsersNumberInput();
   const calcDescription = `${currentResult} - ${enteredNo}`;
   currentResult = currentResult - enteredNo;
   outputResult(currentResult, calcDescription);
