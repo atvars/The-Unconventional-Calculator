@@ -4,8 +4,10 @@ let currentResult = zerro;
 
 // Functions
 function add() {
-  currentResult = currentResult + parseInt(userInput.value);
-  outputResult(currentResult, ' ');
+  const enteredNo = parseInt(userInput.value);
+  const calcDescription = `${currentResult} + ${enteredNo}`;
+  currentResult = currentResult + enteredNo;
+  outputResult(currentResult, calcDescription);
 }
 
 addBtn.addEventListener('click', add);
