@@ -2,7 +2,8 @@
 const dafaultResult = 0;
 let currentResult = dafaultResult;
 
-// adding function
+// Functions
+// additition function
 function add(num1, num2) {
   const result = num1 + num2;
   return result;
