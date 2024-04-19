@@ -5,13 +5,17 @@ let currentResult = dafaultResult;
 // adding function
 function add(num1, num2) {
   const result = num1 + num2;
-  alert(`the result is: ${result}`);
+  return result;
 }
 
 currentResult = currentResult + 10;
 
-let calculationDescription = `${dafaultResult}  + 10`;
+currentResult = add(3, 5);
+
+let calculationDescription = `${dafaultResult}  + ${currentResult}`;
+
+
+
 
 outputResult(currentResult, calculationDescription);
 
-add(3,5)
