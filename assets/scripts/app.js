@@ -4,19 +4,20 @@ let currentResult = dafaultResult;
 
 // Functions
 // additition function
-function add(num1, num2) {
-  const result = num1 + num2;
-  return result;
+function add() {
+  currentResult = currentResult + parseInt(userInput.value);
+  outputResult(currentResult, '');
 }
 
-currentResult = currentResult + 10;
+// currentResult = currentResult + 10;
 
-currentResult = add(3, 5);
+// currentResult = add(3, 5);
+
+addBtn.addEventListener('click', add)
 
 let calculationDescription = `${dafaultResult}  + ${currentResult}`;
 
 
 
 
-outputResult(currentResult, calculationDescription);
 
