@@ -3,21 +3,52 @@ const dafaultResult = 0;
 let currentResult = dafaultResult;
 
 // Functions
-// additition function
-function add() {
-  currentResult = currentResult + parseInt(userInput.value);
-  outputResult(currentResult, '');
+
+// function to covert users entered string as number
+function getUserNumberInput() {
+  return parseInt(userInput.value);
+}
+// function to write calculation
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+  const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+  outputResult(currentResult, calcDescription);
 }
 
-// currentResult = currentResult + 10;
+// additition function
+function add() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult + enteredNumber;
+  createAndWriteOutput('+', initialResult, enteredNumber)
+  
+}
 
-// currentResult = add(3, 5);
+// subtraction function
+function subtract() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult - enteredNumber;
+  createAndWriteOutput('-', initialResult, enteredNumber)
+}
 
-addBtn.addEventListener('click', add)
+// multiplying function
+function multiply() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult * enteredNumber;
+  createAndWriteOutput('*', initialResult, enteredNumber)
+}
 
-let calculationDescription = `${dafaultResult}  + ${currentResult}`;
+// deviding function
+function devide() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult / enteredNumber;
+  createAndWriteOutput('/', initialResult, enteredNumber)
+}
 
-
-
-
-
+// adding event listeners to the buttons
+addBtn.addEventListener('click', add);
+subtractBtn.addEventListener('click', subtract);
+multiplyBtn.addEventListener('click', multiply);
+divideBtn.addEventListener('click', devide);
