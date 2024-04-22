@@ -4,14 +4,14 @@ let currentResult = dafaultResult;
 
 // Functions
 
-// function to covert users entered string as number
+// function to covert users entered value(string) as number
 function getUserNumberInput() {
   return parseInt(userInput.value);
 }
-// function to write calculation
+// function to dsiplay calculation and result
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
-  outputResult(currentResult, calcDescription);
+  outputResult(currentResult, calcDescription); // function from vendor file
 }
 
 // additition function
@@ -19,8 +19,7 @@ function add() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   currentResult = currentResult + enteredNumber;
-  createAndWriteOutput('+', initialResult, enteredNumber)
-  
+  createAndWriteOutput('+', initialResult, enteredNumber);
 }
 
 // subtraction function
@@ -28,7 +27,7 @@ function subtract() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   currentResult = currentResult - enteredNumber;
-  createAndWriteOutput('-', initialResult, enteredNumber)
+  createAndWriteOutput('-', initialResult, enteredNumber);
 }
 
 // multiplying function
@@ -36,7 +35,7 @@ function multiply() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   currentResult = currentResult * enteredNumber;
-  createAndWriteOutput('*', initialResult, enteredNumber)
+  createAndWriteOutput('*', initialResult, enteredNumber);
 }
 
 // deviding function
@@ -44,7 +43,7 @@ function devide() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   currentResult = currentResult / enteredNumber;
-  createAndWriteOutput('/', initialResult, enteredNumber)
+  createAndWriteOutput('/', initialResult, enteredNumber);
 }
 
 // adding event listeners to the buttons
