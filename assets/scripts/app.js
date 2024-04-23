@@ -1,6 +1,7 @@
 // global variables
 const dafaultResult = 0;
 let currentResult = dafaultResult;
+let logEntries = [];
 
 // Functions
 
@@ -20,6 +21,8 @@ function add() {
   const initialResult = currentResult;
   currentResult = currentResult + enteredNumber;
   createAndWriteOutput('+', initialResult, enteredNumber);
+  logEntries.push(`${initialResult} + ${enteredNumber} = ${currentResult}`);
+  console.log(logEntries);
 }
 
 // subtraction function
@@ -28,6 +31,8 @@ function subtract() {
   const initialResult = currentResult;
   currentResult = currentResult - enteredNumber;
   createAndWriteOutput('-', initialResult, enteredNumber);
+  logEntries.push(`${initialResult} - ${enteredNumber} = ${currentResult}`);
+  console.log(logEntries);
 }
 
 // multiplying function
@@ -36,6 +41,8 @@ function multiply() {
   const initialResult = currentResult;
   currentResult = currentResult * enteredNumber;
   createAndWriteOutput('*', initialResult, enteredNumber);
+  logEntries.push(`${initialResult} * ${enteredNumber} = ${currentResult}`);
+  console.log(logEntries);
 }
 
 // deviding function
@@ -44,6 +51,8 @@ function devide() {
   const initialResult = currentResult;
   currentResult = currentResult / enteredNumber;
   createAndWriteOutput('/', initialResult, enteredNumber);
+  logEntries.push(`${initialResult} / ${enteredNumber} = ${currentResult}`);
+  console.log(logEntries);
 }
 
 // adding event listeners to the buttons
