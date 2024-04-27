@@ -5,7 +5,7 @@ let logEntries = [];
 
 // Gets input from user input field
 function getUserNumberInput() {
-  return parseInt(usrInput.value);
+  return parseInt(userInput.value);
 }
 
 // Generates and writes calculation log
@@ -25,7 +25,7 @@ function writeToLog(
     operation: operationIdentifier,
     prevResult: prevResult,
     number: operationNumber,
-    result: newResult
+    result: newResult,
   };
   logEntries.push(logEntry);
   console.log(logEntries);
@@ -35,15 +35,15 @@ function calculateResult(calculationType) {
   const enteredNumber = getUserNumberInput();
   // checking if caluculation type is not one of them we stop function
   if (
-    calculationType !== 'ADD' &&
-    calculationType !== 'SUBTRACT' &&
-    calculationType !== 'MULTIPLY' &&
-    calculationType !== 'DIVIDE' ||
+    (calculationType !== 'ADD' &&
+      calculationType !== 'SUBTRACT' &&
+      calculationType !== 'MULTIPLY' &&
+      calculationType !== 'DIVIDE') ||
     !enteredNumber
   ) {
     return;
   }
-  
+
   // if mattches than do the math
   const initialResult = currentResult;
   let mathOperator;
@@ -63,7 +63,6 @@ function calculateResult(calculationType) {
 
   createAndWriteOutput(mathOperator, initialResult, enteredNumber);
   writeToLog(calculationType, initialResult, enteredNumber, currentResult);
-
 }
 
 function add() {
